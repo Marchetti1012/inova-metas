@@ -421,7 +421,6 @@ export default function App() {
     if (!img1) { setError("Envie pelo menos a Imagem 1."); return; }
     setError("");
     setResult(null);
-    setRawText("");
     setLoading(true);
 
     try {
