@@ -399,7 +399,6 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
-  const [rawText, setRawText] = useState("");
 
   async function toBase64(file) {
     return new Promise((res, rej) => {
@@ -460,7 +459,6 @@ export default function App() {
       }
 
       const text = data.content?.map(b => b.text || "").join("").trim();
-      setRawText(text);
 
       if (!text) throw new Error("A API retornou resposta vazia.");
 
@@ -628,7 +626,7 @@ export default function App() {
                 </p>
               </div>
               <button
-                onClick={() => { setResult(null); setRawText(""); }}
+                onClick={() => { setResult(null); }}
                 style={{
                   background: "#fff", border: `1.5px solid ${RED}`,
                   borderRadius: 10, padding: "9px 18px",
